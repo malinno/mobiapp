@@ -9,6 +9,7 @@ export interface LoginResponse {
   token: string;
   refreshToken?: string;
   user?: any;
+  tokenExpirationTime?: number;
 }
 
 export async function loginApi(payload: LoginPayload): Promise<LoginResponse> {

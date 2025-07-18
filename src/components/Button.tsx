@@ -1,15 +1,6 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, ActivityIndicator, ViewStyle, TextStyle } from 'react-native';
-
-type ButtonProps = {
-  title: string;
-  onPress: () => void;
-  loading?: boolean;
-  style?: ViewStyle;
-  textStyle?: TextStyle;
-  disabled?: boolean;
-};
-
+import { TouchableOpacity, Text, StyleSheet, ActivityIndicator,  } from 'react-native';
+import { ButtonProps } from '../types/Button';
 const Button: React.FC<ButtonProps> = ({ title, onPress, loading, style, textStyle, disabled }) => (
   <TouchableOpacity
     style={[styles.button, style, disabled && styles.disabled]}

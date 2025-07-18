@@ -20,6 +20,7 @@ export const useAuthStore = create<AuthState>((set) => ({
     await AsyncStorage.setItem('refreshToken', refreshToken);
     if (user) await AsyncStorage.setItem('user', JSON.stringify(user));
     set({ token, refreshToken, user });
+    console.log('[AuthStore] setAuth:', { token, refreshToken, user });
   },
   logout: async () => {
     await AsyncStorage.multiRemove(['token', 'refreshToken', 'user']);
@@ -32,6 +33,7 @@ export const useAuthStore = create<AuthState>((set) => ({
       token,
       refreshToken: refreshToken ?? state.refreshToken,
     }));
+    console.log('[AuthStore] updateToken:', { token, refreshToken });
   },
   restoreAuth: async () => {
     const [token, refreshToken, user] = await Promise.all([

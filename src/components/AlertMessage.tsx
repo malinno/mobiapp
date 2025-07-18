@@ -1,14 +1,6 @@
 import React, { useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-
-type AlertProps = {
-  message: string;
-  type?: 'success' | 'error' | 'info';
-  visible: boolean;
-  onHide: () => void;
-  duration?: number;
-};
-
+import { AlertProps } from '../types/Alert';
 const colors = {
   success: '#4BB543',
   error: '#FF3333',

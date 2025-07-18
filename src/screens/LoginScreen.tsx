@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image, KeyboardAvoidingView, Platform, ScrollView, Animated, ActivityIndicator } from 'react-native';
-import Loading from '../components/Loading';
 import AlertMessage from '../components/AlertMessage';
 import { useAuthStore } from '../store/authStore';
 import LinearGradient from 'react-native-linear-gradient';
@@ -76,13 +75,13 @@ const LoginScreen = () => {
           <Image source={images.logo} style={styles.images} />
           <Text style={styles.title}>ĐĂNG NHẬP</Text>
           <View style={styles.inputGroup}>
-            <Text style={styles.label}>User ID:</Text>
+            <Text style={styles.label}>Tài Khoản:</Text>
             <View style={styles.inputWrap}>
               
               <FontAwesomeIcon icon={faUser} size={20} color="#888" style={styles.inputIcon}/>
               <TextInput
                 style={styles.input}
-                placeholder="Quét QRcode"
+                placeholder="Tên tài khoản"
                 value={username}
                 onChangeText={setUsername}
                 autoCapitalize="none"
